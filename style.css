@@ -5,8 +5,8 @@ h1, #result, footer {
 
 body {
     font-family: 'Montserrat', arial;
-    background-color: #ffe6f2;
-    color: #330019;
+    background-color: hsl(330, 100%, 95%);
+    color: hsl(330, 100%, 10%);
 }
 
 #app {
@@ -22,20 +22,20 @@ input {
     font-family: 'Montserrat', arial;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid #330019;
-    color: #330019;
-    background-color: #ffe6f2;
+    border: 1px solid hsl(330, 100%, 10%);
+    color: hsl(330, 100%, 10%);
+    background-color: hsl(330, 100%, 95%);
     margin: 5px 0 10px 0;
 }
 
 input.correct {
-    border-color: #006600;
-    color: #006600;
-    background-color: #99ff99;
+    border-color: hsl(120, 100%, 20%);
+    color: hsl(120, 100%, 20%);
+    background-color: hsl(120, 100%, 80%);
 }
 
 input.incorrect {
-    background-color: #ff99ca;
+    background-color: hsl(330, 100%, 80%);
 }
 
 p span {
@@ -43,22 +43,22 @@ p span {
 }
 
 p span.correct {
-    color: #00ff00;
+    color: hsl(120, 100%, 50%);
 }
 
 p span.incorrect {
-    color: #ff3399;
+    color: hsl(330, 100%, 60%);
 }
 
 a {
-    color: hsla(271, 100%, 50%, 1);
+    color: hsl(270, 100%, 50%);
     transition: .5s color;
     text-decoration: none;
-    border-bottom: 1px dotted hsla(271, 100%, 50%, 1);
+    border-bottom: 1px dotted hsl(271, 100%, 50%);
 }
 
 a:hover {
-    color: hsla(271, 100%, 75%, 1);
+    color: hsl(270, 100%, 75%);
 }
 
 @media (max-width: 750px) {
