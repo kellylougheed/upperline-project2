@@ -4,7 +4,7 @@ window.onload = function() {
         "Swift": "This language is used for building iOS apps.",
         "Java": "This object-oriented language powers Android applications.",
         "JavaScript": "This scripting language runs in the web browser.",
-        "CSS": "This markup language adds style to an HTML page.",
+        "CSS": "This language adds style to an HTML page.",
         "C#": "This language is used for scripts in the game engine Unity.",
         "FORTRAN": "This early language was used for numeric computing.",
         "C++": "This language is the object-oriented version of its predecessor, C.",
@@ -22,25 +22,41 @@ window.onload = function() {
         let question = quiz[answer];
         console.log(counter);
         let id = "answer" + counter;
-        let html = `<p>${question}<br/><input type='text' id='${id}' /></p>`;
+        let resultId = "result" + counter;
+        let html = `<p>${question}<br/><input type='text' id='${id}' />`;
+        html += `<span id='${resultId}'></span><p>`;
         app.insertAdjacentHTML("beforeend", html);
         
         let element = document.querySelector(`#${id}`);
+        let resultElement = document.querySelector(`#${resultId}`);
         
         element.addEventListener('change', e => {
             if (element.value.toLowerCase() == answer.toLowerCase()) {
-                // Change to edit classes
-                element.style.backgroundColor = "green";
-                element.insertAdjacentHTML(
-                    "afterend", "<span class='correct'>Correct!</span>"
-                );
-                correctAnswers++;
+                if (element.classList.contains("incorrect")) {
+                    element.classList.remove("incorrect");
+                }
+                element.classList.add("correct");
+                
+                if (resultElement.classList.contains("incorrect")) {
+                    resultElement.classList.remove("incorrect");
+                }
+                resultElement.classList.add("correct");
+                resultElement.innerHTML = "Correct!";
+                
+                if (correctAnswers < 10) {
+                    correctAnswers++;
+                }
             } else {
-                // Change to edit classes
-                element.style.backgroundColor = "red";
-                element.insertAdjacentHTML(
-                    "afterend", "<span class='incorrect'>Incorrect!</span>"
-                );
+                if (element.classList.contains("correct")) {
+                    element.classList.remove("correct");
+                }
+                element.classList.add("incorrect");
+                
+                if (resultElement.classList.contains("correct")) {
+                    resultElement.classList.remove("correct");
+                }
+                resultElement.classList.add("incorrect");
+                resultElement.innerHTML = "Incorrect!";
             }
             if (correctAnswers === 1) {
                 result.innerHTML = `${correctAnswers} answer correct!`;

@@ -1,3 +1,69 @@
-h1 {
+h1, #result, footer {
+    font-family: 'Inconsolata', courier;
     text-align: center;
+}
+
+body {
+    font-family: 'Montserrat', arial;
+    background-color: #ffe6f2;
+    color: #330019;
+}
+
+#app {
+    background-color: rgba(255,255,255,0.5);
+    margin: auto;
+    width: 80%;
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+
+input {
+    font-size: 1.2em;
+    font-family: 'Montserrat', arial;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #330019;
+    color: #330019;
+    background-color: #ffe6f2;
+    margin: 5px 0 10px 0;
+}
+
+input.correct {
+    border-color: #006600;
+    color: #006600;
+    background-color: #99ff99;
+}
+
+input.incorrect {
+    background-color: #ff99ca;
+}
+
+p span {
+    margin-left: 10px;
+}
+
+p span.correct {
+    color: #00ff00;
+}
+
+p span.incorrect {
+    color: #ff3399;
+}
+
+a {
+    color: hsla(271, 100%, 50%, 1);
+    transition: .5s color;
+    text-decoration: none;
+    border-bottom: 1px dotted hsla(271, 100%, 50%, 1);
+}
+
+a:hover {
+    color: hsla(271, 100%, 75%, 1);
+}
+
+@media (max-width: 750px) {
+    #app {
+        width: 95%;
+        margin: auto;
+    }
 }
